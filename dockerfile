@@ -1,5 +1,13 @@
 FROM python:3.9-slim
-COPY . /app
+
+# Set the working directory
 WORKDIR /app
-RUN pip install -r requirements.txt
+
+# Copy the application code into the container
+COPY . /app
+
+# Install Flask directly
+RUN pip install flask
+
+# Specify the command to run the application
 CMD ["python", "app.py"]
