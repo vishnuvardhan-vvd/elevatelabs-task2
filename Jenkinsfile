@@ -18,14 +18,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t flask-app .'
+                bat 'docker build -t flask-app .'
             }
         }
 
         stage('Deploy') {
             steps {
                 script {
-                    sh 'docker run -d -p 80:80 flask-app'
+                    bat 'docker run -d -p 80:80 flask-app'
                 }
             }
         }
